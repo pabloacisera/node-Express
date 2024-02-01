@@ -1,0 +1,14 @@
+npm es un de software que contiene paquetes que se pueden utilizar con node;
+
+y tambien una herramienta para la linea de comandos;
+
+paquete: archivo o directorio(conjunto de archivos en una ruta comùn) descrito por un JSON;
+este paquete puede ser publicado en el registro "npm";
+
+modulo: archivo importado con require;
+
+para poder utiliza require se requiere que sea un archivo javascript o una carpeta con un archivo package.Json que contenga una propiedad main.
+
+dependencias: paquetes necesitan otros paquetes para funcionar;
+
+JSON: 
