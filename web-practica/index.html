@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta de Empleados</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Consulta de Empleados con Menos de 5 Años de Experiencia</h1>
+  
+  <button onclick="buscarEmpleados()">Buscar Empleados</button>
+
+  <table id="resultadoTabla">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Años de Experiencia</th>
+      </tr>
+    </thead>
+    <tbody id="resultadoCuerpo">
+      <!-- Aquí se mostrarán los resultados -->
+    </tbody>
+  </table>
+
+  <script src="app.js"></script>
+  <script src="miApp.js"></script>
+</body>
+</html>
