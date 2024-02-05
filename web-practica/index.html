@@ -1,31 +1,19 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Consulta de Empleados</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Buscar Usuarios</title>
 </head>
 <body>
-  <h1>Consulta de Empleados con Menos de 5 Años de Experiencia</h1>
-  
-  <button onclick="buscarEmpleados()">Buscar Empleados</button>
-
-  <table id="resultadoTabla">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        <th>Años de Experiencia</th>
-      </tr>
-    </thead>
-    <tbody id="resultadoCuerpo">
-      <!-- Aquí se mostrarán los resultados -->
-    </tbody>
-  </table>
-
-  <script src="app.js"></script>
-  <script src="miApp.js"></script>
+    <div class="container">
+        <label for="searchInput">Ingrese la búsqueda:</label>
+        <input type="text" id="searchInput" />
+        <button onclick="buscarUsuarios()">Buscar</button>
+        <div id="resultados"></div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
