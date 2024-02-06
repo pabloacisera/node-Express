@@ -12,10 +12,10 @@ const server = http.createServer((req, res) => { // Creamos el servidor;
             // que todavía no está definida;
             return manejarSolicitudGet(req, res);
         case 'POST':
-        return manejarSolicitudPost(req, res);
+            return manejarSolicitudPost(req, res);
         default:
             console.log(`El método no puede ser manejado por el servidor: ${method}`);
-    }
+    };
 });
 
 function manejarSolicitudGet(req, res) {
@@ -32,23 +32,31 @@ function manejarSolicitudGet(req, res) {
         return res.end(JSON.stringify(cursos.infoCursos.programacion));
     } else {
         res.statusCode = 501; //si es necesario asignarlo;
-        return res.end(`El metodo ${method} no puede ser manejado por el servidor. Error ${statusCode}`);
+        return res.end(`Error 501: el metodo no puede ser manejado por el servidor.`);
     }
 }
 
 function manejarSolicitudPost(req, res){
-    const path=req.url;
+    const path = req.url;
 
-    if(path=== ('/cursos/programacion')){///en esta situacion el usuario podra agregar un curso de programacion;
-        res.statusCode= 200;
-        return res.end('el servidor recibio una solicitud post para /curso/programacion');
-    }
-}
+    if (path === '/cursos/programacion') {
+        let body = '';
+
+        req.on('data', (contenido) => { // <-- Corregir aquí
+            body += contenido.toString(); // <-- Corregir aquí
+        });
+
+        req.on('end', () => {
+            console.log(body);
+            console.log(typeof body); // <-- Corregir aquí
+            return res.end('El servidor recibió una solicitud post para /cursos/programacion');
+        });
+    };
+};
+
 
 const PUERTO = 3000;
 
 server.listen(PUERTO, () => { //el puerto escucha la accion del cliente
     console.log(`El servidor está escuchando en el puerto: ${PUERTO}`);
 });
-
-
