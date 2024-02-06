@@ -3,7 +3,7 @@
 const http = require('http'); // Se llama al protocolo;
 const cursos = require('./cursos'); // Se guarda la base de datos;
 
-const servidor = http.createServer((req, res) => { // Creamos el servidor;
+const server = http.createServer((req, res) => { // Creamos el servidor;
     const { method } = req; // Guardar los métodos para poder extraerlos y trabajar con ellos;
 
     switch (method) {
@@ -47,7 +47,7 @@ function manejarSolicitudPost(req, res){
 
 const PUERTO = 3000;
 
-servidor.listen(PUERTO, () => { //el puerto escucha la accion del cliente
+server.listen(PUERTO, () => { //el puerto escucha la accion del cliente
     console.log(`El servidor está escuchando en el puerto: ${PUERTO}`);
 });
 
